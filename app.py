@@ -13,12 +13,12 @@ CORS(app, resources={r"/*": {"origins": "https://frontend-dfd9d6ehahgdazdk.eastu
 #      supports_credentials=True, 
 #      allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"])
 
-cors = CORS(app, resource={
-    r"/*": {
-        "origins": "*"
-    }
-})
-app.config['CORS_HEADERS'] = 'Content-Type'
+# cors = CORS(app, resource={
+#     r"/*": {
+#         "origins": "*"
+#     }
+# })
+# app.config['CORS_HEADERS'] = 'Content-Type'
 # # Function to establish a MySQL connection for a specific database
 # def get_db_connection(database_name):
 #     try:
