@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 # Enable CORS for all routes and allow specific origin (http://localhost:3000)
 # CORS(app)
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000","https://frontend-dfd9d6ehahgdazdk.eastus-01.azurewebsites.net"]}})
+CORS(app, resources={r"/*": {"origins": "https://frontend-dfd9d6ehahgdazdk.eastus-01.azurewebsites.net"}})
+# CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 # CORS(app, resources={r"/*": {"origins": ["http://localhost:3000","https://multitenant-fe-ckabezf7eab2cudb.eastus-01.azurewebsites.net"]}},
 #      supports_credentials=True, 
 #      allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"])
@@ -34,6 +35,10 @@ CORS(app, resources={r"/*": {"origins": ["http://localhost:3000","https://fronte
 #     except Error as e:
 #         print(f"Error connecting to MySQL: {e}")
 #         return None
+
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "Backend is successfully running!"}), 200
 
 def get_db_connection(database_name):
     try:
