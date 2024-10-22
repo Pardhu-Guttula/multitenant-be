@@ -62,19 +62,19 @@ jobs:
         run: unzip release.zip
 
       
-      # - name: Login to Azure
-      #   uses: azure/login@v2
-      #   with:
-      #     client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CA3403A31BB549CC9BFDC4489C8D140E }}
-      #     tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6E9924790A6C4824B504BFFCB713CB00 }}
-      #     subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FE5D38FE821E4A53A6F48E456AD5CD4D }}
-      - name: Log in to Azure
-        uses: azure/login@v1
+      - name: Login to Azure
+        uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          allow-no-subscriptions: true
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CA3403A31BB549CC9BFDC4489C8D140E }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6E9924790A6C4824B504BFFCB713CB00 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FE5D38FE821E4A53A6F48E456AD5CD4D }}
+      # - name: Log in to Azure
+      #   uses: azure/login@v1
+      #   with:
+      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
+      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      #     allow-no-subscriptions: true
 
 
       - name: 'Deploy to Azure Web App'
