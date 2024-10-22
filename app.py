@@ -9,7 +9,7 @@ import json
 app = Flask(__name__)
 
 # Enable CORS for specific origins
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://multitenant-fe-ckabezf7eab2cudb.eastus-01.azurewebsites.net"]}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://frontend-dfd9d6ehahgdazdk.eastus-01.azurewebsites.net"]}})
 
 def get_db_connection(database_name):
     try:
